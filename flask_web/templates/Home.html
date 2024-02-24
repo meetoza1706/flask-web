@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Citadel Estates</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='Home.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.6/fuse.min.js"></script>
+    <script src="./javascripts/searchengine.js" defer></script>
+    <link rel="icon" href="{{ url_for('static', filename='icons/favcon.png')}}">
+  </head>
+
+  <body id="grad">
+   
+    <!-- now starts the background-color -->
+    <div class="gradient-bg">
+      <div class="gradients-container">
+        <div class="g1"></div>
+        <div class="g2"></div>
+        <div class="g3"></div>
+        <div class="g4"></div>
+        <div class="g5"></div>
+        <div class="g6"></div>
+        <!-- now starts the navbar  -->
+        <nav class="navbar">   
+          <div class="navbar-container">
+            <img src="{{ url_for('static', filename='icons/citadel_logo_text.png') }}" class="citadel-logo">
+            <a href="D:\website\webpages\landing-page-1.html"class="nav_a_3"><p>Home</p></a> 
+            <a href="test.html" class="nav_a_2"><p>Sell or Rent</p></a> 
+            <a href="#" class="nav_a_1"><p>Contact Us</p></a> 
+            <button type="submit" onclick="{{ url_for('login') }}" value="editor" class="button-17" role="button">login</button>
+          </div>
+        </nav>
+        <!-- now starts the searchbar  -->
+        <div class="wrap">
+          <div class="search">
+             <input type="text" class="searchTerm" placeholder=" What are you looking for?">
+             <button type="submit" class="searchButton">
+               <i class="fa fa-search"></i>
+              </button>
+          </div>
+        </div> 
+        <script src="D:\Website\javascripts\searchengine.js"></script>
+      <!--now starts the content-->
+    <a href="D:\website\webpages\darohar.html">
+      <div class="content_container">
+        <img src="{{ url_for('static', filename='images/darohar/Image-1.jpg') }}" class="nyc_img">
+        <h1 class="content_heading">Darohar</h1>
+        <h2 class="content_pricing">1.29cr-1.78cr      |</h2>
+        <h2 class="content_sqft">2480 SQFTS</h2>
+        <h3 class="content_location">Vaisnodevi circle, Ahemdabad</h3>
+      </div>
+    </a>
+  
+  <!-- content-2 starts -->
+  <a href="C:\wamp64\www\Web-1\Content_2.html">
+    <div class="content_container_2">
+      <img src="{{ url_for('static', filename='images/suryavansh Solitaire/Image-1.jpg') }}" class="nyc_img_2">
+      <h1 class="content_heading_2">Suryansh Solitaire</h1>
+      <h2 class="content_pricing_2">40-50 Lac     |</h2>
+      <h2 class="content_sqft_2">900 SQFTS</h2>
+      <h3 class="content_location_2">Shilaj, Ahmedabad</h3>
+    </div>
+  </a>
+  
+  <!-- content-3 starts -->
+  <a href="C:\wamp64\www\Web-1\Content_3.html">
+    <div class="content_container_3">
+      <img src="{{ url_for('static', filename='images/Sangani Platinum/Image-1.jpg') }}" class="nyc_img_3">
+      <h1 class="content_heading_3">Sangani Platinum</h1>
+      <h2 class="content_pricing_3">25.0 Lac       |</h2>
+      <h2 class="content_sqft_3">981 SQFTS</h2>
+      <h3 class="content_location_3">Narol Gam, Ahmedabad</h3>
+    </div>
+  </a>
+ 
+  <!-- content-4 starts -->
+  <a href="C:\wamp64\www\Web-1\Content_4.html">
+    <div class="content_container_4">
+      <img src="{{ url_for('static', filename='images/Rajbaug Society/Image-1.jpg') }}" class="nyc_img_4">
+      <h1 class="content_heading_4">Rajbaug Society</h1>
+      <h2 class="content_pricing_4">2.30 Cr        |</h2>
+      <h2 class="content_sqft_4">2250 SQFTS</h2>
+      <h3 class="content_location_4">New Ranip, Ahmedabad</h3>
+    </div>
+  </a>
+  
+  <!-- content-5 starts -->
+  <a href="C:\wamp64\www\Web-1\Content_5.html">
+    <div class="content_container_5">
+      <img src="{{ url_for('static', filename='images/Arohi bunglows/Image-1.jpg') }}" class="nyc_img_5">
+      <h1 class="content_heading_5">Arohi bunglows</h1>
+      <h2 class="content_pricing_5">3.4 Cr        |</h2>
+      <h2 class="content_sqft_5">2268 SQFTS</h2>
+      <h3 class="content_location_5">Aarohi Club Road, Ahmedabad</h3>
+    </div>
+  </a>
+
+  <!-- content-6 starts -->
+  <a href="C:\wamp64\www\Web-1\Content_6.html">
+    <div class="content_container_6">
+      <img src="{{ url_for('static', filename='images/swaminarayan/Image-1.jpg') }}" class="nyc_img_6">
+      <h1 class="content_heading_6">Swaminarayan Park Phase 5</h1>
+      <h2 class="content_pricing_6">27.0 Lac        |</h2>
+      <h2 class="content_sqft_6">990 SQFTS</h2>
+      <h3 class="content_location_6">Naroda, Ahmedabad</h3>
+    </div>
+  </a>
+  
+  <!-- content-7 starts  -->
+  <a href="C:\wamp64\www\Web-1\Content_6.html">
+    <div class="content_container_7">
+      <img src="{{ url_for('static', filename='images/Supercity Shine/Image-1.jpg') }}" class="nyc_img_7">
+      <h1 class="content_heading_7">Supercity Shine</h1>
+      <h2 class="content_pricing_7">5.1 Cr        |</h2>
+      <h2 class="content_sqft_7">3047 SQFTS</h2>
+      <h3 class="content_location_7">Bhadaj, Ahmedabad</h3>
+    </div>
+  </a>
+
+  <!-- page shifter -->
+  <div class="end">
+    <button class="next">Next page!</button>
+  </div>
+  
+  <!-- This is a sort of footer not an actual footer  -->
+  <div class="footer">
+    <p class="copyright-text">
+      &copy; All rights reserved 2024 by Citadel Estates
+    </p>
+  </div>
+     <!--script for chatbot--> 
+     <script src="https://cdn.botpress.cloud/webchat/v1/inject.js"></script>
+     <script src="https://mediafiles.botpress.cloud/ea72c7e1-155e-48cf-a8ef-9e73a74b565d/webchat/config.js" defer></script>  
+      </div>
+    </div>
+  </body>
+</html> 
