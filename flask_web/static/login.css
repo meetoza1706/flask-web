@@ -285,7 +285,7 @@ a{
   font-size: 123%;
   position: absolute;
   top: -2px;
-  right: 600px;
+  right: 590px;
 }
 
 .nav_a_3:hover {
@@ -560,4 +560,12 @@ a{
   top:600px;
   left:50%;
   transform: translateX(-50%);
+}
+
+.alert {
+  position: relative;
+  top: 222px;
+  right: -110px;
+  color: rgb(123, 26, 26);
+  font-family: 'Lora', sans-serif;
 }

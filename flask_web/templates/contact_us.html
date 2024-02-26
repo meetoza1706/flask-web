@@ -1,0 +1,155 @@
+ <!DOCTYPE html>
+<html>
+  <head>
+    <title>Vastu Realties</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.6/fuse.min.js"></script>
+    <script src="./javascripts/searchengine.js" defer></script>
+    <link rel="icon" href="{{ url_for('static', filename='icons/favcon.png')}}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='contact_us.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+  </head>
+
+  <body id="grad">
+   
+    <!-- now starts the background-color -->
+    <div class="gradient-bg">
+      <div class="gradients-container">
+        <div class="g1"></div>
+        <div class="g2"></div>
+        <div class="g3"></div>
+        <div class="g4"></div>
+        <div class="g5"></div>
+        <div class="g6"></div>
+        <div class="g7"></div>
+        <div class="g8"></div>
+        <div class="g9"></div>
+
+
+        <!-- now starts the navbar  -->
+        <nav class="navbar">   
+          <div class="navbar-container">
+            <img src="{{ url_for('static', filename='icons/logo-verticle.png') }}" class="vasturealties-logo">
+            <a href="{{ url_for('home') }}" class="nav_a_3"><p>Home</p></a> 
+            <a href="test.html" class="nav_a_2"><p>Sell or Rent</p></a> 
+            <a href="#" class="nav_a_1"><p>Contact Us</p></a> 
+            <div class="dropdown">
+              <button class="dropbtn"><h6 class="btntext">Account</h6></button>
+              <div class="dropdown-content">
+                <a href="#">Service 1</a>
+                <a href="{{ url_for('logout') }}">Logout</a>
+              </div>
+            </div>  
+            
+          </div>
+        </nav>
+        <!-- now starts the Contact Us  -->
+          <div class="container">
+              <form>
+                <h1>Contact Us</h1>
+                <input type="text" id="firstName" placeholder="First Name" required>
+                <input type="text" id="lastName" placeholder="Last Name" required>
+                <input type="email" id="email" placeholder="Email" required>
+                <input type="text" id="mobile" placeholder="Mobile" required>
+                <div class="type_message"><h4>Type Your Message Here...</h4></div>
+                <textarea required></textarea>
+                <input type="submit" value="Send" id="button">
+              </form>
+          </div>
+        <!--Now start Frequently asked questions-->
+        
+          <div class="Heading">
+            <h1>Frequently Asked Questions</h1>
+          </div>
+          <div class="faq_container">
+            <div class="wrapper">
+              <button class="toggle">
+                How long this property been on a market?
+                <i class="fas fa-plus icon"></i>
+              </button>
+              <div class="content">
+                <p>To know that how long this property been on a market please check the property AGE wrriten as age of construction.</p>
+              </div>
+            </div>
+        <!--Block2-->
+              <div class="wrapper">
+                <button class="toggle">
+                  What are the nearby amenities such as park, school etc?
+                  <i class="fas fa-plus icon"></i>
+                </button>
+              <div class="content">
+                  <p>To see nearby amenities such as school and parks see the LANDMARK of the property.</p>
+              </div>
+            </div>
+        <!--Block3-->
+              <div class="wrapper">
+                <button class="toggle">
+                  Is chat bot available 24/7?
+                  <i class="fas fa-plus icon"></i>
+                </button>
+                <div class="content">
+                  <p>Yes our chat boat is available anytime.</p>
+              </div>
+            </div>
+        <!--Block4-->
+            <div class="wrapper">
+              <button class="toggle">
+                How many square feet would our house will be?
+                <i class="fas fa-plus icon"></i>
+              </button>
+              <div class="content">
+                <p>To check how many square foot your house will be.Please check in your property details</p>
+              </div>
+            </div>
+        <!--Block5-->     
+            <div class="wrapper">
+              <button class="toggle">
+                How can I provide feedback or suggestions for improving your services?
+                <i class="fas fa-plus icon"></i>
+              </button>
+              <div class="content">
+                <p>Please check the contact us page on our website and fill the contact us form, our team will coordinate as early as possible.</p>
+            </div>
+            </div>
+        <!--Block6-->
+            <div class="wrapper">
+              <button class="toggle">
+                What are the requirements for becoming a landlord or property investor?
+                <i class="fas fa-plus icon"></i>
+              </button>
+              <div class="content">
+                <p>Rental property investors usually need a 15-25% down payment for a rental property mortgage.<br>
+                  A landlord requires a broad array of skills, from understanding basic tenant law to foxing a leaky faucet.</p>
+              </div>
+            </div>
+        <!--Block7-->
+            <div class="wrapper">
+               <button class="toggle">
+                Do you offer images for properties?
+                <i class="fas fa-plus icon"></i>
+               </button>
+              <div class="content">
+                <p>yes We offer a best images related the property.</p>
+              </div>
+            </div>
+        <!--Block8-->
+            <div class="wrapper">
+              <button class="toggle">
+                 What are the current properties available for rent/sale in my preferred area?
+                <i class="fas fa-plus icon"></i>
+               </button>
+              <div class="content">
+                <p>If you want to Check the properties. available near your area then our chatbot eliza will help.</p>
+                </div>
+            </div>
+          </div>    
+          <script src="{{ url_for('static', filename='contact_us.js')}}"></script>
+          <!-- This is a sort of footer not an actual footer  -->
+          <div class="footer">
+            <p class="copyright-text">
+             &copy; All rights reserved 2024 by Vastu Realties
+            </p>
+        </div>
+    </div>
+  </body>
+</html>                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               

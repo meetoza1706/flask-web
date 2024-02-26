@@ -243,6 +243,9 @@ a{
     border-radius: 0 0 50px 50px; /* to make only curve the bottom two edges*/
     margin-bottom: 50px;
     z-index: 2;
+
+    Backdrop-filter: blur(90px);
+    -webkit-backdrop-filter: blur(90px);
   }
   
   .navbar-container {

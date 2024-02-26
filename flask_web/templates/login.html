@@ -48,17 +48,26 @@
                   <input type="submit" value="login" id="submit_button">
                 </div>
               </form> 
+              {% with messages = get_flashed_messages(with_categories=true) %}
+              {% if messages %}
+                  {% for category, message in messages %}
+                      <div class="alert">
+                          {{ message }}
+                      </div>
+                  {% endfor %}
+              {% endif %}
+          {% endwith %}
               <div class="not_acc_div">
                 <h5>Don't have an account? <a href="{{ url_for('register') }}" class="register-here">Register here!</a></h5>           
               </div>
             </div>
-            <form method="POST" action="/logout">
+            <!-- <form method="POST" action="/logout">
               <button type="submit" class="button-4">Logout</button>
             </form>          
       </div>
             <form method="POST" action="/check_user">
               <button type="submit" class="button-3">Check User</button>
-          </form>
+          </form> -->
       </div>
     </div>
   </body>

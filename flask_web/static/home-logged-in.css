@@ -161,6 +161,9 @@ a{
     border-radius: 0 0 50px 50px; /* to make only curve the bottom two edges*/
     margin-bottom: 50px;
     z-index: 2;
+
+    Backdrop-filter: blur(90px);
+    -webkit-backdrop-filter: blur(90px);
   }
   
   .navbar-container {
@@ -202,8 +205,8 @@ a{
   font-family: "lora", sans-serif;
   font-size: 123%;
   position: absolute;
-  bottom: 42px;
-  left: 872px;
+  bottom: -10px;
+  left: 146px;
 }
 
 .nav_a_3:hover {
@@ -215,7 +218,7 @@ a{
 .logo { 
   width: 26%;
   position: fixed;
-  top: 32px;
+  top: -7px;
   left: 30px;
   transform: scale(0.69);
 }
@@ -236,28 +239,31 @@ a{
   border: none;
   cursor: pointer;
   position:absolute;
-  bottom: 22px;
-  left: 540px;
-  height: 30px;
+  bottom: 14px;
+  left: 598px;
+  height: 50px;
+  width: 160px;
   text-align: center;
+  border-radius: 25px 25px 25px 25px;
 }
 
 .btntext{
   position: relative;
-  bottom: 46px;
+  bottom: 39px;
   font-size: 16px;
 }
 
 .dropdown-content {
   display: none;
   position: absolute;
-  top: 0px;
-  left: 500px;
+  top: -10px;
+  left: 600px;
   background-color: rgba(42, 42, 42, 0.3);
   min-width: 160px;
   z-index: 1;
   text-align: center;
   width: 20px;
+  border-radius: 25px 25px 25px 25px;
 }
 
 .dropdown-content a {

@@ -43,13 +43,11 @@ def register():
 
         hashed_password = generate_password_hash(password)
 
-
         print(username, hashed_password)
         user = User(username=username, password=hashed_password)
         db.session.add(user)
         db.session.commit()    
         
-        flash('registration successful!')
         return redirect(url_for('login'))
     return render_template('register.html')
 
@@ -66,7 +64,6 @@ def login():
         if user and check_password_hash(user.password, password):
             session['logged_in'] = True
             print("User logged in:", session['logged_in'])
-            flash('Login successfull', 'success')
             return redirect(url_for('home'))
         else:
             flash('Incorrect password or username', 'danger')
@@ -76,7 +73,6 @@ def login():
 @app.route('/logout', methods=['GET', 'POST'])
 def logout():
     session.pop('logged_in', None)
-    flash('logged_out!', 'success')
     return redirect(url_for('home'))
 
 @app.route('/check_user', methods=['GET', 'POST'])
@@ -87,6 +83,14 @@ def check_user():
     else:
         print("User is not logged in")
         return "no user logged in"
+    
+@app.route('/contact_us')
+def contact_us():
+    if 'logged_in' in session and session['logged_in']:
+        return render_template('contact_us.html')
+    else:
+        flash('You have not logged in yet', 'danger')
+        return render_template('login.html')
 
 if __name__ == '__main__':
     with app.app_context():

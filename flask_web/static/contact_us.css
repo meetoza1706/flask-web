@@ -1,0 +1,607 @@
+html, body{
+    font-family: 'lora',sans-serif;
+    margin: 0;
+    padding: 0;
+  }
+  
+  :root {
+    --color-bg1: rgb(83, 0, 128);
+    --color-bg2: rgb(0, 25, 123);
+    --color1: 2, 0, 150;
+    --color2: 201, 0, 255; 
+    --color3: 195, 169, 0;
+    --color4: black;
+    --color5: 180, 180, 50;
+    --color-interactive: 140, 100, 255;
+    --circle-size: 120%;
+    --circle-size2: 100%;
+    --blending: hard-light;
+    --blending2: soft-light;
+  }
+  
+  .gradient-bg {
+    width: 100%;
+    height: 1800px;
+    position: absolute;
+    overflow: hidden;
+    background-color: /*linear-gradient(40deg, var(--color-bg1), var(--color-bg2));*/rgb(2, 0, 8);
+    top: 0;
+    left: 0;
+  }
+  
+  svg {
+    display: none;
+  }
+  
+  .gradients-container {
+    width: 100%;
+    height:100%;
+  }
+  
+  .g1 {
+    position: absolute;
+    background: radial-gradient(circle at left, rgba(var(--color1), 1) 0, rgba(var(--color1), 0) 15%) no-repeat;
+    mix-blend-mode: var(--blending);
+    width: var(--circle-size);
+    height: var(--circle-size);
+    top: calc(15% - var(--circle-size) / 5);
+    left: calc(15% - var(--circle-size) / 6);
+    filter: blur(90px);
+  }
+  
+  .g2 {
+    position: absolute;
+    background: radial-gradient(circle at center, rgba(var(--color3), 1) 0, rgba(var(--color3), 0) 20%) no-repeat;
+    mix-blend-mode: var(--blending2);
+    width: var(--circle-size2);
+    height: var(--circle-size2);
+    top: calc(20% - var(--circle-size2) / 2.5 + 200px);
+    left: calc(20% - var(--circle-size2) / -5 + 200px);
+    filter: blur(90px);
+  }
+  
+  .g3 {
+    position: absolute;
+    background: radial-gradient(circle at left, rgba(var(--color2), 0.2 ) 0, rgba(var(--color2), 0) 25%) no-repeat;
+    mix-blend-mode: var(--blending);
+    width: var(--circle-size);
+    height: var(--circle-size);
+    top: calc(25% - var(--circle-size) / 1.5);
+    left: calc(25% - var(--circle-size) / 4);
+    filter: blur(90px);
+  }
+  
+  
+  .g4 {
+    position: absolute;
+    background: radial-gradient(circle at right, rgba(var(--color2), 0.3) 0, rgba(var(--color2), 0) 15%) no-repeat;
+    mix-blend-mode: var(--blending);
+    width: var(--circle-size);
+    height: var(--circle-size);
+    top: calc(15% - var(--circle-size) / -5);
+    left: calc(15% - var(--circle-size) / 5);
+    filter: blur(90px);
+  }
+  
+  .g5 {
+    position: absolute;
+    background: radial-gradient(circle at right, rgba(var(--color1), 1) 0, rgba(var(--color1), 0) 25%) no-repeat;
+    mix-blend-mode: var(--blending);
+    width: var(--circle-size);
+    height: var(--circle-size);
+    top: calc(25% - var(--circle-size) / 1.5);
+    left: calc(25% - var(--circle-size) / 3);
+    filter: blur(90px);
+  }
+
+  .g6 {
+    position: absolute;
+    background: radial-gradient(circle at center, rgba(var(--color2), 0.2) 0, rgba(var(--color2), 0) 50%) no-repeat;
+    mix-blend-mode: var(--blending);
+    width: var(--circle-size);
+    height: var(--circle-size);
+    z-index: 0;
+    top: calc(50% - var(--circle-size) / -10);
+    left: calc(50% - var(--circle-size) / 60%);
+    filter: blur(90px);
+  }
+
+  .g7 {
+    position: absolute;
+    background: radial-gradient(circle at center, rgba(var(--color2), 0.2) 0, rgba(var(--color2), 0) 15%) no-repeat;
+    mix-blend-mode: var(--blending);
+    width: var(--circle-size);
+    height: var(--circle-size);
+    z-index: 0;
+    top: calc(15% - var(--circle-size) / 3);
+    left: calc(15% - var(--circle-size) / 8);
+    filter: blur(90px);
+
+  }
+
+  .g8 {
+    position: absolute;
+    background: radial-gradient(circle at left, rgba(var(--color2), 0.2 ) 0, rgba(var(--color2), 0) 25%) no-repeat;
+    mix-blend-mode: var(--blending);
+    width: var(--circle-size);
+    height: var(--circle-size);
+    top: calc(25% - var(--circle-size) / -5);
+    left: calc(25% - var(--circle-size) / 4);
+    filter: blur(90px);
+  }
+
+  .g9 {
+    position: absolute;
+    background: radial-gradient(circle at center, rgba(var(--color3), 0.8 ) 0, rgba(var(--color3), 0) 25%) no-repeat;
+    mix-blend-mode: var(--blending);
+    width: var(--circle-size);
+    height: var(--circle-size);
+    top: calc(25% - var(--circle-size) / -4.5);
+    left: calc(25% - var(--circle-size) / 4);
+    filter: blur(90px);
+  }
+
+
+
+
+  
+  /* #grad {
+    background-image: linear-gradient(to bottom, rgb(26, 26, 101), black);
+    height: 97.7vh;
+    width: 100h;
+    background-repeat: no-repeat;
+  } */
+  
+  p {
+      font-family: 'Lora', sans-serif;
+      color: white;
+  }
+  
+  h1{
+    font-family: 'Lora', sans-serif;
+    color: rgb(153, 153, 153);
+  }
+  
+  a{
+      text-decoration: none;
+  }
+  
+  .button-17 {
+      align-items: center;
+      appearance: none;
+      background-color: rgba(0, 0, 0, 0.5);;
+      border-radius: 24px;
+      border-style: none;
+      box-shadow: rgba(0, 0, 0, .2) 0 3px 5px -1px,rgba(0, 0, 0, .14) 0 6px 10px 0,rgba(0, 0, 0, .12) 0 1px 18px 0;
+      box-sizing: border-box;
+      color: #7f8082;
+      cursor: pointer;
+      display: inline-flex;
+      fill: currentcolor;
+      font-family: "Google Sans",Roboto,Arial,sans-serif;
+      font-size: 14px;
+      font-weight: 500;
+      height: 48px;
+      justify-content: center;
+      letter-spacing: .25px;
+      line-height: normal;
+      max-width: 100%;
+      overflow: visible;
+      padding: 2px 24px;
+      position: relative;
+      text-align: center;
+      text-transform: none;
+      transition: box-shadow 280ms cubic-bezier(.4, 0, .2, 1),opacity 15ms linear 30ms,transform 270ms cubic-bezier(0, 0, .2, 1) 0ms;
+      user-select: none;
+      -webkit-user-select: none;
+      touch-action: manipulation;
+      width: 140px;
+      will-change: transform,opacity;
+      z-index: 0;
+      position: right;
+    }
+    
+    .button-17:hover {
+      background: #FFF;
+      color: #000000;
+    }
+    
+    .button-17:active {
+      box-shadow: 0 4px 4px 0 rgb(60 64 67 / 30%), 0 8px 12px 6px rgb(60 64 67 / 15%);
+      outline: none;
+    }
+    
+    .button-17:focus {
+      outline: none;
+      border: 2px solid #4285f4;
+    }
+    
+    .button-17:not(:disabled) {
+      box-shadow: rgba(60, 64, 67, .3) 0 1px 3px 0, rgba(60, 64, 67, .15) 0 4px 8px 3px;
+    }
+    
+    .button-17:not(:disabled):hover {
+      box-shadow: rgba(60, 64, 67, .3) 0 2px 3px 0, rgba(60, 64, 67, .15) 0 6px 10px 4px;
+    }
+    
+    .button-17:not(:disabled):focus {
+      box-shadow: rgba(60, 64, 67, .3) 0 1px 3px 0, rgba(60, 64, 67, .15) 0 4px 8px 3px;
+    }
+    
+    .button-17:not(:disabled):active {
+      box-shadow: rgba(60, 64, 67, .3) 0 4px 4px 0, rgba(60, 64, 67, .15) 0 8px 12px 6px;
+    }
+    
+    .button-17:disabled {
+      box-shadow: rgba(60, 64, 67, .3) 0 1px 3px 0, rgba(60, 64, 67, .15) 0 4px 8px 3px;
+    }
+  
+     .button-17 { /* for position of login button */
+      position: absolute; 
+      top: 1px;          
+      right: 25px;      
+    }
+  
+    /* starts scroll bar */
+  
+    ::-webkit-scrollbar {
+      width: 8px; /* Set track width */
+    }
+    
+    ::-webkit-scrollbar-track {
+      background: rgb(1, 6, 24); /* Track background color with semi-transparency */
+    }
+    
+    ::-webkit-scrollbar-thumb {
+      background: white; /* Thumb background color */
+      border-radius: 4px; /* Rounded corners */
+    }
+    
+    ::-webkit-scrollbar-thumb:hover {
+      background: #666; /* Hover effect */
+    }
+  
+    /* STARTS NAV BAR */
+    
+    .navbar {
+      position: fixed; 
+      top: 0;             
+      left: 50%;
+      transform: translateX(-50%);
+      width: 1400px;
+      height: 50px;        
+      background-color: rgba(19, 19, 19, 0.3);
+      backdrop-filter: blur(90px);/*Blur Effect*/
+      -webkit-backdrop-filter: blur(90px);/*Blur Effect*/
+      display: flex;       
+      align-items: center; 
+      justify-content: space-around; 
+      border-radius: 0 0 50px 50px; /* to make only curve the bottom two edges*/
+      margin-bottom: 50px;
+      z-index: 2;
+    }
+    
+    .navbar-container {
+      /* Additional styling for the container within the navbar (optional) */
+      padding: 10px;
+    }
+  
+  .nav_a_1 {
+      color: white;
+      font-family: "lora", sans-serif;
+      font-size: 123%;
+      position: absolute;
+      top: 12px;
+      right: 250px;
+  }
+  .nav_a_1:hover {
+      p {
+        color: rgb(83, 83, 83)
+      }
+  }
+  
+  .nav_a_2 {
+    color: white;
+    font-family: "lora", sans-serif;
+    font-size: 123%;
+    position: absolute;
+    top: 12px;
+      right: 440px;
+  }
+  
+  .nav_a_2:hover {
+    p {
+      color: rgb(83, 83, 83)
+    }
+  }
+  
+  .nav_a_3 {
+    color: white;
+    font-family: "lora", sans-serif;
+    font-size: 123%;
+    position: absolute;
+    top: -14px;
+    right: -710px;
+  }
+  
+  .nav_a_3:hover {
+    p {
+      color: rgb(83, 83, 83);
+    }
+  }
+  
+  .vasturealties-logo { 
+      width: 16%;
+      height: 1%; 
+      position: relative; /*to adjust the citadel logo's position*/
+      top: 26px;  /* Moves 20px down from its normal position */
+      left: 70px;  /* Moves 10px to the right */
+  }
+
+/*Now Starts Contact Us*/
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'lora',sans-serif;
+    color: rgb(173, 170, 170);
+  }
+
+  .container {
+    min-height: 800px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .container form{
+    width: 670px;
+    height: 400px;
+    display: flex;
+    justify-content: center;
+    border-left: 1px solid rgb(173, 170, 170);
+    border-right: 1px solid rgb(173, 170, 170);
+    border-top: 1px solid rgb(173, 170, 170);
+    border-bottom: 1px solid rgb(173, 170, 170);
+    box-shadow: 20px 20px 50px rgba(0,0,0,0.5);
+    border-radius: 2cqmax 25px 25px 25px;
+    background: rgb(15, 16, 28,65%);
+    backdrop-filter: blur(80px);
+    flex-wrap: wrap;
+    
+  }
+
+  .container form h1{
+    font-weight: 500;
+    margin-top: 20px;
+    width: 500px;
+    text-align: center;
+  }
+
+  .container form input{
+    width: 300px;
+    height: 40px;
+    padding-left: 10px;
+    outline: none;
+    border: none;
+    font-size: 15px;
+    margin-bottom: 10px;
+    background: none;
+    border-bottom: 2px solid rgb(173, 170, 170);
+    background: rgb(255, 255, 255,6%);
+    border-radius: 5px;
+  }
+
+  .container form input::placeholder{
+    color: rgb(173, 170, 170);
+  }
+
+  .container form #lastName,
+  .container form #mobile{
+    margin-left: 20px;
+
+  }
+
+  .container form h1{
+    color: rgb(173, 170, 170);;
+    font-weight: 300;
+    width: 600px;
+    margin-left: 20px;
+  }
+
+  .container form textarea{
+    background: rgb(255, 255, 255,6%);
+    border-radius: 5px;
+    border-bottom: 2px solid rgb(173, 170, 170);
+    color: rgb(173, 170, 170);
+    font-weight: 200;
+    font-size: 15px;
+    padding: 10px;
+    outline: none;
+    min-width: 600px;
+    max-width: 600px;
+    min-height: 80px;
+    max-height: 80px;
+  }
+
+  textarea::-webkit-scrollbar{
+    width: 16px;
+  }
+
+  textarea::-webkit-scrollbar-thumb{
+    background-color: rgba(194,194,194,0.713);
+  }
+
+  .container form #button{
+    border: none;
+    background: #f2f2f2;
+    border-radius: 5px;
+    margin-top: 20px;
+    font-weight: 600;
+    font-size: 20px;
+    color: #333;
+    width: 100px;
+    padding: 0;
+    margin-right: 500px;
+    margin-bottom: 30px;
+    transition: 0.3s;
+  }
+
+  .container form #button:hover{
+    opacity: 0.7;
+  }
+
+  .type_message{
+    color: #f2f2f2;
+  }
+
+  /*Frequently Asked Questions Starts*/
+  *,
+  *:before,
+  *:after{
+      padding: 0;
+      margin: 0;
+      box-sizing: border-box;
+
+  }
+  .faq_container{
+      width: 80%;
+      min-width: 500px;
+      position: absolute;
+      transform: translate(-50%,-50%);
+      top: 70%;
+      left: 50%;
+  }
+
+  .Heading {
+    text-align: center;
+  }
+
+  .wrapper{
+      background-color: rgb(15, 16, 28,65%);
+      margin-bottom: 20px;
+      padding: 15px 40px;
+      border-radius: 5px;
+      box-shadow: 0 15px 25px rgba(0,0,50,0.2);
+      opacity: 100%;
+  }
+
+  .toggle,
+.content{
+    font-family: "lora",sans-serif;
+}
+
+  .toggle{
+      width: 100%;
+      background-color: transparent;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      font-size: 16px;
+      color: rgba(194,194,194,0.713);
+      font-weight: 500;
+      border: none;
+      outline: none;
+      cursor: pointer;
+      padding: 15px 0;
+  }
+
+
+  .content{
+      position: relative;
+      font-size: 14px;
+      text-align: justify;
+      line-height: 30px;
+      height: 0;
+      overflow: hidden;
+      transition: all 1s;
+  }
+
+  /* footer starts  */
+
+.footer {
+  height: 60px;
+  width: 90%;
+
+  position: absolute;
+  top: 1750px;
+  left:50%;
+  transform: translateX(-50%);
+  background-color: rgba(19, 19, 19, 0.3);
+  backdrop-filter: blur(90px);
+  -webkit-backdrop-filter: blur(90px);
+  border-radius: 25px 25px 0px 0px;
+
+}
+
+.copyright-text {
+  font-size: 20px; /* Adjust font size as needed */
+  color: #666; /* Adjust text color as needed */
+  position: absolute;
+  top: 8px;
+  left:37%;
+  transform: translateX("-37%");
+}
+
+/* drop down menu */
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropbtn {
+  background-color: rgba(132, 132, 132, 0.2);
+  color: white;
+  padding: 16px;
+  font-size: 18px;
+  border: none;
+  cursor: pointer;
+  position:absolute;
+  bottom: 16px;
+  left: 1200px;
+  height: 50px;
+  width: 160px;
+  text-align: center;
+  border-radius: 25px 25px 25px 25px;
+}
+
+.btntext{
+  position: relative;
+  bottom: 0px;
+  font-size: 16px;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  top: -10px;
+  left: 1200px;
+  background-color: rgba(42, 42, 42, 0.3);
+  min-width: 160px;
+  z-index: 1;
+  text-align: center;
+  width: 20px;
+  border-radius: 25px 25px 25px 25px;
+}
+
+.dropdown-content a {
+  color: white;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-content a:hover {
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+/* Ensure the dropdown button is visible */
+.nav_a_3 {
+  position: relative;
+  z-index: 2;
+}

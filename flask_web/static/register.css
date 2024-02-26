@@ -294,12 +294,12 @@ a{
   }
 }
 
-.citadel-logo { 
-    width: 26%;
-    height: 1%; 
-    position: relative;
-    top: 10px;  /* Moves 20px down from its normal position */
-    left: -140px;  /* Moves 10px to the right */
+.logo { 
+  width: 26%;
+  position: relative;
+  top: 7;
+  left: 0px;
+  transform: scale(0.69);
 }
 
 /* here starts the register form */
@@ -431,4 +431,12 @@ a{
 #submit_button:hover {
   background: rgba(255, 255, 255, 0.2);
   color: #000000;
+}
+
+.alert {
+  position: relative;
+  top: 392px;
+  right: -540px;
+  color: rgb(123, 26, 26);
+  font-family: 'Lora', sans-serif;
 }
