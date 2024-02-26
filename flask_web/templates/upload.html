@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Upload Data</title>
+</head>
+<body>
+    <h1>Upload Data</h1>
+    <form action="/upload" method="POST" enctype="multipart/form-data">
+        <label for="name">Name:</label><br>
+        <input type="text" id="name" name="name" required><br>
+        
+        <label for="price">Price:</label><br>
+        <input type="text" id="price" name="price" required><br>
+        
+        <label for="image">Image:</label><br>
+        <input type="file" id="image" name="image"><br>
+        
+        <label for="bhk">BHK:</label><br>
+        <input type="text" id="bhk" name="bhk"><br>
+        
+        <label for="location">Location:</label><br>
+        <input type="text" id="location" name="location"><br>
+        
+        <label for="status">Status:</label><br>
+        <input type="text" id="status" name="status"><br>
+        
+        <label for="address">Address:</label><br>
+        <input type="text" id="address" name="address"><br>
+        
+        <label for="floor">Floor:</label><br>
+        <input type="text" id="floor" name="floor"><br>
+        
+        <label for="ownership_type">Ownership Type:</label><br>
+        <input type="text" id="ownership_type" name="ownership_type"><br>
+        
+        <label for="facing_direction">Facing Direction:</label><br>
+        <input type="text" id="facing_direction" name="facing_direction"><br>
+        
+        <label for="age_of_construction">Age of Construction:</label><br>
+        <input type="text" id="age_of_construction" name="age_of_construction"><br>
+        
+        <label for="booking_amount">Booking Amount:</label><br>
+        <input type="text" id="booking_amount" name="booking_amount"><br>
+        
+        <input type="submit" value="Submit">
+    </form>
+</body>
+</html>

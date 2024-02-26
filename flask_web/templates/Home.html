@@ -25,7 +25,7 @@
           <div class="navbar-container">
             <img src="{{ url_for('static', filename='icons/logo-verticle.png') }}" class="logo">
             <a class="nav_a_3" href="{{ url_for('home') }}"><p>Home</p></a> 
-            <a href="test.html" class="nav_a_2"><p>Sell or Rent</p></a> 
+            <a href="{{ url_for('upload') }}" class="nav_a_2"><p>Sell or Rent</p></a> 
             <a href="{{ url_for('contact_us') }}" class="nav_a_1"><p>Contact Us</p></a> 
             <form method="GET" action="{{ url_for('login') }}">
               <button type="submit" class="button-17" role="button">Login</button>

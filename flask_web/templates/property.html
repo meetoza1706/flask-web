@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Property Listings</title>
+    <style>
+        .property-card {
+            border: 1px solid #ccc;
+            padding: 10px;
+            margin-bottom: 20px;
+            overflow: hidden;
+        }
+        .property-image {
+            float: left;
+            margin-right: 20px;
+        }
+        .property-details {
+            overflow: hidden;
+        }
+    </style>
+</head>
+<body>
+    <h1>Property Listings</h1>
+    <div>
+        {% for property_data in property_list %}
+            <div class="property-card">
+                <div class="property-image">
+                    {% if property_data.image %}
+                        <img src="{{ url_for('static', filename='uploads/' + property_data.image) }}" alt="{{ property_data.name }}" style="max-width: 200px;">
+                    {% else %}
+                        <img src="{{ url_for('static', filename='placeholder.jpg') }}" alt="Placeholder Image" style="max-width: 200px;">
+                    {% endif %}
+                </div>
+                <div class="property-details">
+                    <h2>{{ property_data.name }}</h2>
+                    <p><strong>Price:</strong> {{ property_data.price }}</p>
+                    <p><strong>BHK:</strong> {{ property_data.bhk }}</p>
+                    <p><strong>Location:</strong> {{ property_data.location }}</p>
+                    <p><strong>Status:</strong> {{ property_data.status }}</p>
+                    <p><strong>Address:</strong> {{ property_data.address }}</p>
+                    <p><strong>Floor:</strong> {{ property_data.floor }}</p>
+                    <p><strong>Ownership Type:</strong> {{ property_data.ownership_type }}</p>
+                    <p><strong>Facing Direction:</strong> {{ property_data.facing_direction }}</p>
+                    <p><strong>Age of Construction:</strong> {{ property_data.age_of_construction }}</p>
+                    <p><strong>Booking Amount:</strong> {{ property_data.booking_amount }}</p>
+                    <p><strong>Date Created:</strong> {{ property_data.date_created }}</p>
+                    <!-- Add more property details as needed -->
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+</body>
+</html>
