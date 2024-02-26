@@ -228,7 +228,7 @@ a{
     transform: translateX(-50%);
 
     width: 1500px;
-    height: 50px;        
+    height: 56px;        
     
     background-color: rgba(22, 22, 22, 0.3);
     border: 2px solid rgba(42, 42, 42, 0.3);
@@ -294,12 +294,12 @@ a{
   }
 }
 
-.citadel-logo { 
-    width: 26%;
-    height: 1%; 
-    position: relative;
-    top: 10px;  /* Moves 20px down from its normal position */
-    left: -140px;  /* Moves 10px to the right */
+.logo { 
+  width: 26%;
+  position: relative;
+  top: 3;
+  left: 0px;
+  transform: scale(0.69);
 }
 
 .login_box{

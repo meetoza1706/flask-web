@@ -25,7 +25,10 @@ class User(db.Model):
 
 @app.route('/')
 def home():
-    return render_template('home.html')
+    if 'logged_in' in session and session['logged_in']:
+        return render_template('home-logged-in.html')
+    else:
+        return render_template('home.html')
 
 @app.route('/register', methods=['GET', 'POST'])
 def register():
