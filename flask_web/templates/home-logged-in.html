@@ -45,15 +45,13 @@
           </nav>
 
           <!-- now starts the searchbar  -->
-          <div class="wrap">
-            <div class="search">
-              <input type="text" class="searchTerm" placeholder=" What are you looking for?">
-              <button type="submit" class="searchButton">
-                <i class="fa fa-search"></i>
-                </button>
+          <form action="/search" method="post">
+            <input type="text" name="query" class="search_bar" placeholder="Search...">
+            <button type="submit">Search</button>
+        </form>
             </div>
+          </form>
           </div> 
-          <script src="D:\Website\javascripts\searchengine.js"></script>
         <!--now starts the content-->
       <a href="D:\website\webpages\darohar.html">
         <div class="content_container">

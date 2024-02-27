@@ -837,3 +837,9 @@ body{
   left:37%;
   transform: translateX("-37%");
 }
+
+.search_bar{
+  position: fixed;
+  top:120px;
+  right:20px;
+}

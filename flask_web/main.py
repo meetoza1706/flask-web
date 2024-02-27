@@ -5,6 +5,7 @@ from werkzeug.security import generate_password_hash, check_password_hash
 import os
 from werkzeug.utils import secure_filename
 
+
 app = Flask(__name__)
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///data.db'
 app.config['SECRET_KEY'] = '1701'
@@ -12,12 +13,12 @@ app.config['UPLOAD_FOLDER'] = 'static/uploads'
 app.config['WTF_CSRF_ENABLED'] = False
 db = SQLAlchemy(app)
 
+
 class User(db.Model):
     id = db.Column(db.Integer, primary_key = True)
     username = db.Column(db.String(10), unique=True, nullable=False)
     password = db.Column(db.String(8), nullable=False)
     Data = db.relationship('Data', backref='user', lazy=True)
-
 
 class Data(db.Model):
     id = db.Column(db.Integer, primary_key=True)
@@ -25,7 +26,7 @@ class Data(db.Model):
     name = db.Column(db.String(30), nullable=False)
     price = db.Column(db.String(20), nullable=False)
     image = db.Column(db.String(100), nullable=True)
-    bhk = db.Column(db.String(6), nullable=True)
+    bhk = db.Column(db.Integer, nullable=True)
     location = db.Column(db.String(100), nullable=True)   
     status = db.Column(db.String(50), nullable=True)   
     address = db.Column(db.String(600), nullable=True)   
@@ -71,8 +72,6 @@ def register():
         
         return redirect(url_for('login'))
     return render_template('register.html')
-
-
 
 @app.route('/login', methods=['GET', 'POST'])
 def login():
@@ -156,11 +155,25 @@ def upload():
         flash('You have not logged in yet', 'danger')
         return render_template('login.html')
     
-@app.route('/property', methods=['GET', 'POST'])
-def property():
-    property_data = Data.query.all()
-
-    return render_template('property.html', property_list=property_data)
+@app.route('/search', methods=['GET', 'POST'])
+def search():
+    if request.method == 'POST':
+        query = request.form['query']
+        search_results = Data.query.filter(Data.name.contains(query) | Data.location.contains(query) | Data.bhk.contains(query)).all()
+        return render_template('search.html', search_results=search_results, query=query)
+    else:
+        query = request.args.get('query')
+        print("Search query:", query)  # Print out the query parameter for debugging purposes
+        return render_template('search.html')
+    
+@app.route('/property/<int:id>')
+def property(id):
+    # Fetch the property data by ID
+    property_data = Data.query.get(id)
+    if property_data:
+        return render_template('property.html', property_data=property_data)
+    else:
+        return render_template('property_not_found.html'), 404  # Render a custom 4
 
 if __name__ == '__main__':
     with app.app_context():
