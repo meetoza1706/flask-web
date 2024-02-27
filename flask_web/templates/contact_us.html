@@ -36,7 +36,11 @@
             <div class="dropdown">
               <button class="dropbtn"><h6 class="btntext">Account</h6></button>
               <div class="dropdown-content">
-                <a href="#">Service 1</a>
+                    {% if current_username %}
+                    <p>hey, {{ current_username }}!</p>
+                    {% else %}
+                    <p>Welcome, Guest!</p>
+                    {% endif %}
                 <a href="{{ url_for('logout') }}">Logout</a>
               </div>
             </div>  

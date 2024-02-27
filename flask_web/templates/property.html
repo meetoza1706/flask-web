@@ -1,54 +1,88 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Property Listings</title>
-    <style>
-        .property-card {
-            border: 1px solid #ccc;
-            padding: 10px;
-            margin-bottom: 20px;
-            overflow: hidden;
-        }
-        .property-image {
-            float: left;
-            margin-right: 20px;
-        }
-        .property-details {
-            overflow: hidden;
-        }
-    </style>
-</head>
-<body>
-    <h1>Property Listings</h1>
-    <div>
-        {% for property_data in property_list %}
-            <div class="property-card">
-                <div class="property-image">
-                    {% if property_data.image %}
-                        <img src="{{ url_for('static', filename='uploads/' + property_data.image) }}" alt="{{ property_data.name }}" style="max-width: 200px;">
-                    {% else %}
-                        <img src="{{ url_for('static', filename='placeholder.jpg') }}" alt="Placeholder Image" style="max-width: 200px;">
-                    {% endif %}
+<html>
+  <head>
+    <title>Vastu Realties</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='home-logged-in.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.6/fuse.min.js"></script>
+    <script src="./javascripts/searchengine.js" defer></script>
+    <link rel="icon" href="{{ url_for('static', filename='icons/favcon.png')}}">
+  </head>
+
+  <body id="grad">
+  
+    <!-- now starts the background-color -->
+    <div class="gradient-bg">
+      <div class="gradients-container">
+        <div class="g1"></div>
+        <div class="g2"></div>
+        <div class="g3"></div>
+        <div class="g4"></div>
+        <div class="g5"></div>
+        <div class="g6"></div>
+        <div class="g7"></div>
+        <div class="g8"></div>
+        <div class="g9"></div>
+
+        <!-- now starts the navbar  -->
+        <nav class="navbar">   
+          <div class="navbar-container">
+            <img src="{{ url_for('static', filename='icons/logo-verticle.png') }}" class="logo">
+              <a href="{{ url_for('home') }}" class="nav_a_3"><p>Home</p></a>
+              <a href="{{ url_for('upload') }}" class="nav_a_2"><p>Sell or Rent</p></a> 
+              <a href="{{ url_for('contact_us') }}" class="nav_a_1"><p>Contact Us</p></a> 
+              <div class="dropdown">
+                <button class="dropbtn"><h6 class="btntext">Account</h6></button>
+                <div class="dropdown-content">
+                  {% if current_username %}
+                  <p>hey, {{ current_username }}!</p>
+                  {% else %}
+                  <p>Welcome, Guest!</p>
+                  {% endif %}
+                  <a href="{{ url_for('logout') }}">Logout</a>
                 </div>
-                <div class="property-details">
-                    <h2>{{ property_data.name }}</h2>
-                    <p><strong>Price:</strong> {{ property_data.price }}</p>
-                    <p><strong>BHK:</strong> {{ property_data.bhk }}</p>
-                    <p><strong>Location:</strong> {{ property_data.location }}</p>
-                    <p><strong>Status:</strong> {{ property_data.status }}</p>
-                    <p><strong>Address:</strong> {{ property_data.address }}</p>
-                    <p><strong>Floor:</strong> {{ property_data.floor }}</p>
-                    <p><strong>Ownership Type:</strong> {{ property_data.ownership_type }}</p>
-                    <p><strong>Facing Direction:</strong> {{ property_data.facing_direction }}</p>
-                    <p><strong>Age of Construction:</strong> {{ property_data.age_of_construction }}</p>
-                    <p><strong>Booking Amount:</strong> {{ property_data.booking_amount }}</p>
-                    <p><strong>Date Created:</strong> {{ property_data.date_created }}</p>
-                    <!-- Add more property details as needed -->
-                </div>
-            </div>
-        {% endfor %}
+              </div>      
+        </nav>
+    <!-- here starts the content -->
+       <!-- Assuming property_data is a list of properties -->
+{% for property_data in property_list %}
+<div class="property">
+    <div class="property-image">
+        {% if property_data.image %}
+            <img src="{{ url_for('static', filename='uploads/' + property_data.image) }}" alt="{{ property_data.name }}" style="max-width: 200px;">
+        {% else %}
+            <img src="{{ url_for('static', filename='placeholder.jpg') }}" alt="Placeholder Image" style="max-width: 200px;">
+        {% endif %}
     </div>
-</body>
-</html>
+    <div class="property-details">
+        <h2>{{ property_data.name }}</h2>
+        <p><strong>Price:</strong> {{ property_data.price }}</p>
+        <p><strong>BHK:</strong> {{ property_data.bhk }}</p>
+        <p><strong>Location:</strong> {{ property_data.location }}</p>
+        <p><strong>Status:</strong> {{ property_data.status }}</p>
+        <p><strong>Address:</strong> {{ property_data.address }}</p>
+        <p><strong>Floor:</strong> {{ property_data.floor }}</p>
+        <p><strong>Ownership Type:</strong> {{ property_data.ownership_type }}</p>
+        <p><strong>Facing Direction:</strong> {{ property_data.facing_direction }}</p>
+        <p><strong>Age of Construction:</strong> {{ property_data.age_of_construction }}</p>
+        <p><strong>Booking Amount:</strong> {{ property_data.booking_amount }}</p>
+        <p><strong>Date Created:</strong> {{ property_data.date_created }}</p>
+        <!-- Add more property details as needed -->
+    </div>
+</div>
+{% endfor %}
+
+
+<!-- This is a sort of footer not an actual footer  -->
+<div class="footer">
+    <p class="copyright-text">
+      &copy; All rights reserved 2024 by Citadel Estates
+    </p>
+  </div>
+    <!--script for chatbot--> 
+    <script src="https://cdn.botpress.cloud/webchat/v1/inject.js"></script>
+    <script src="https://mediafiles.botpress.cloud/ea72c7e1-155e-48cf-a8ef-9e73a74b565d/webchat/config.js" defer></script>  
+      </div>
+    </div>
+  </body>
+</html> 

@@ -37,12 +37,19 @@ class Data(db.Model):
     date_created = db.Column(db.DateTime, default=datetime.utcnow)
 
 
-@app.route('/')
+@app.route('/', methods=['GET', 'POST'])
 def home():
+    current_username = None
+    print("Session contents:", session)
+    
+    if 'username' in session:
+        current_username = session['username']
+        print("Current username:", current_username)
+
     if 'logged_in' in session and session['logged_in']:
-        return render_template('home-logged-in.html')
+        return render_template('home-logged-in.html', current_username=current_username)
     else:
-        return render_template('home.html')
+        return render_template('home.html', current_username=current_username)
 
 @app.route('/register', methods=['GET', 'POST'])
 def register():
@@ -78,11 +85,13 @@ def login():
         if user and check_password_hash(user.password, password):
             session['logged_in'] = True
             session['user_id'] = user.id
+            session['username'] = user.username
             return redirect(url_for('home'))
         else:
             flash('Incorrect password or username', 'danger')
             return redirect(url_for('login'))
     return render_template('login.html')
+
 
 @app.route('/logout', methods=['GET', 'POST'])
 def logout():
@@ -100,6 +109,13 @@ def check_user():
     
 @app.route('/contact_us')
 def contact_us():
+    current_username = None
+    print("Session contents:", session)
+    
+    if 'username' in session:
+        current_username = session['username']
+        print("Current username:", current_username)
+        
     if 'logged_in' in session and session['logged_in']:
         return render_template('contact_us.html')
     else:
