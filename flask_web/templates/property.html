@@ -52,24 +52,33 @@
         {% else %}
        <img src="{{ url_for('static', filename='placeholder.jpg') }}" alt="Placeholder Image" style="max-width: 200px;">
         {% endif %}
-       <h2>Name:</h><p>{{ property_data.name }}</p>
-        <h2>Location:</h2><p>{{ property_data.location }}</p> 
-       <h2>Price:</h2><p>{{ property_data.price }}</p>
-       <h2>BHK:</h2><p>{{ property_data.bhk }}</p>
-       <h2>SQFTS:</h2><p>{{ property_data.sqfts }}</p>
-       <h2>Address:</h2><p>{{ property_data.address }}</p>
-       <h2>Floor:</h2><p>{{ property_data.floor }}</p>
-       <h2>Ownership type:</h2><p>{{ property_data.ownership_type }}</p>
-       <h2>Facing direction:</h2><p>{{ property_data.facing_direction }}</p>
-       <h2>Age of construction:</h2><p>{{ property_data.age_of_construction }}</p>
-       <h2>booking_amount</h2><p>{{ property_data.booking_amount }}</p>
+       <div class="content-name"><p class="content-name">Name: {{ property_data.name }}</p></div>
+       <div class="content-price"><p class="content-price">Price: {{ property_data.price }}</p></div>
+       <div class="content-location"><p class="content-location">Property: {{ property_data.location }}</p></div> 
+       <div class="content-bhk"><p class="content-bhk">BHK: {{ property_data.bhk }}</p></div>
+       <div class="content-sqft"><p class="content-sqft">SQFTS: {{ property_data.sqft }}</p></div>
+       <div class="content-floor"><p class="content-floor">Floor: {{ property_data.floor }}</p></div>
+       <div class="content-ownership"><p class="content-ownership">Ownership type: {{ property_data.ownership_type }}</p></div>
+       <div class="content-facing_direction"><p class="content-facing_direction">Facing direction: {{ property_data.facing_direction }}</p></div>
+       <div class="content-age"><p class="content-age">Age of construction: {{ property_data.age_of_construction }}</p></div>
+       <div class="content-booking"><p class="content-booking">booking_amount: {{ property_data.booking_amount }}</p></div>
+    
+       <form action="{{ url_for('coming_soon') }}" method="GET">
+       <button class="bookbtn"><p>Book Now</p></button>
+       </form>
     </div> 
 
+    <!-- This is a sort of footer not an actual footer  -->
+  <div class="footer">
+    <p class="copyright-text">
+      &copy; All rights reserved 2024 by Vastu Realties
+    </p>
+  </div>
 
 <!-- This is a sort of footer not an actual footer  -->
     <!--script for chatbot--> 
     <script src="https://cdn.botpress.cloud/webchat/v1/inject.js"></script>
-    <script src="https://mediafiles.botpress.cloud/ea72c7e1-155e-48cf-a8ef-9e73a74b565d/webchat/config.js" defer></script>  
+    <script src="https://mediafiles.botpress.cloud/5e492196-55b1-4ac4-a141-02517c4561b2/webchat/config.js" defer></script>
       </div>
     </div>
   </body>

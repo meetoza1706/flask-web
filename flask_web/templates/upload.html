@@ -1,50 +1,101 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Upload Data</title>
-</head>
-<body>
+<html>
+  <head>
+    <title>Vastu Realties</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='upload.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.6/fuse.min.js"></script>
+    <script src="./javascripts/searchengine.js" defer></script>
+    <link rel="icon" href="{{ url_for('static', filename='icons/favcon.png')}}">
+  </head>
+
+  <body id="grad">
+    <!-- now starts the background-color -->
+    <div class="gradient-bg">
+      <div class="gradients-container">
+        <div class="g1"></div>
+        <div class="g2"></div>
+        <div class="g3"></div>
+        <div class="g4"></div>
+        <div class="g5"></div>
+        <div class="g6"></div>
+        <div class="g7"></div>
+        <div class="g8"></div>
+        <div class="g9"></div>
+
+        <!-- now starts the navbar  -->
+        <nav class="navbar">   
+          <div class="navbar-container">
+            <img src="{{ url_for('static', filename='icons/logo-verticle.png') }}" class="logo">
+              <a href="{{ url_for('home') }}" class="nav_a_3"><p>Home</p></a>
+              <a href="{{ url_for('upload') }}" class="nav_a_2"><p>Sell or Rent</p></a> 
+              <a href="{{ url_for('contact_us') }}" class="nav_a_1"><p>Contact Us</p></a> 
+              <div class="dropdown">
+                <button class="dropbtn"><h6 class="btntext">Account</h6></button>
+                <div class="dropdown-content">
+                  {% if current_username %}
+                  <p>hey, {{ current_username }}!</p>
+                  {% else %}
+                  <p>Welcome, Guest!</p>
+                  {% endif %}
+                  <a href="{{ url_for('logout') }}">Logout</a>
+                </div>
+              </div>      
+        </nav>
+    
+    <div class="content">
     <h1>Upload Data</h1>
+    <hr style="width: 90%;">
     <form action="/upload" method="POST" enctype="multipart/form-data">
-        <label for="name">Name:</label><br>
-        <input type="text" id="name" name="name" required><br>
+        <label for="name" id="label" class="content-name-lb">Name:</label>
+        <input type="text" id="name" name="name" class="content-name" required><br>
         
-        <label for="price">Price:</label><br>
-        <input type="text" id="price" name="price" required><br>
+        <label for="price" id="label" class="content-price-lb">Price:</label>
+        <input type="text" id="price" name="price" class="content-price" required><br>
         
-        <label for="image">Image:</label><br>
-        <input type="file" id="image" name="image"><br>
+        <label for="image" id="label" class="content-image-lb">Image:</label>
+        <input type="file" id="image" name="image" class="content-image" required><br>
         
-        <label for="bhk">BHK:</label><br>
-        <input type="text" id="bhk" name="bhk"><br>
+        <label for="bhk" id="label" class="content-bhk-lb">BHK:</label>
+        <input type="text" id="bhk" name="bhk" class="content-bhk" required><br>
+
+        <label for="sqft" id="label" class="content-sqft-lb">sqft:</label>
+        <input type="text" id="sqft" name="sqft" class="content-sqft" required><br>
         
-        <label for="location">Location:</label><br>
-        <input type="text" id="location" name="location"><br>
+        <label for="location" id="label" class="content-location-lb">Location:</label>
+        <input type="text" id="location" name="location" class="content-location" required><br>
         
-        <label for="status">Status:</label><br>
-        <input type="text" id="status" name="status"><br>
+        <label for="status" id="label" class="content-status-lb">Status:</label>
+        <input type="text" id="status" name="status" class="content-status" required><br>
         
-        <label for="address">Address:</label><br>
-        <input type="text" id="address" name="address"><br>
+        <label for="floor" id="label" class="content-floor-lb">Floor:</label>
+        <input type="text" id="floor" name="floor" class="content-floor" required><br>
         
-        <label for="floor">Floor:</label><br>
-        <input type="text" id="floor" name="floor"><br>
+        <label for="ownership_type" id="label" class="content-ownership-lb">Ownership Type:</label>
+        <input type="text" id="ownership_type" name="ownership_type" class="content-ownership" required><br>
         
-        <label for="ownership_type">Ownership Type:</label><br>
-        <input type="text" id="ownership_type" name="ownership_type"><br>
+        <label for="facing_direction" id="label" class="content-facing-lb">Facing Direction:</label>
+        <input type="text" id="facing_direction" name="facing_direction" class="content-facing" required><br>
         
-        <label for="facing_direction">Facing Direction:</label><br>
-        <input type="text" id="facing_direction" name="facing_direction"><br>
+        <label for="age_of_construction" id="label" class="content-age-lb">Age of Construction:</label>
+        <input type="text" id="age_of_construction" name="age_of_construction" class="content-age" required><br>
         
-        <label for="age_of_construction">Age of Construction:</label><br>
-        <input type="text" id="age_of_construction" name="age_of_construction"><br>
+        <label for="booking_amount" id="label" class="content-booking-lb">Booking Amount:</label>
+        <input type="text" id="booking_amount" name="booking_amount" class="content-booking" required><br>
         
-        <label for="booking_amount">Booking Amount:</label><br>
-        <input type="text" id="booking_amount" name="booking_amount"><br>
-        
-        <input type="submit" value="Submit">
-    </form>
+        <input type="submit" class="submitbtn" value="Submit">
+   </form>
+   </div>
+    <!-- This is a sort of footer not an actual footer  -->
+  <div class="footer">
+    <p class="copyright-text">
+      &copy; All rights reserved 2024 by Vastu Realties
+    </p>
+  </div>
+
+<!-- This is a sort of footer not an actual footer  -->
+      </div>
+    </div>
+  </body>
+</html> 
 </body>
 </html>

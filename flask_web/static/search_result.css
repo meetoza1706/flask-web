@@ -1,0 +1,374 @@
+html, body{
+    font-family: 'Dongle',sans-serif;
+    margin: 0;
+    padding: 0;
+  }
+  
+  :root {
+    --color-bg1: rgb(108, 8, 162);
+    --color-bg2: rgb(0, 17, 82);
+    --color1: 2, 2, 207;
+    --color2: 185, 0, 255; 
+    --color3: 195, 8, 255;
+    --color4: black;
+    --color5: 180, 180, 50;
+    --color-interactive: 140, 100, 255;
+    --circle-size: 120%;
+    --circle-size2: 100%;
+    --blending: hard-light;
+    --blending2: soft-light;
+  }
+  
+  .gradient-bg {
+    width: 100%;
+    height: 2300px;
+    position: absolute;
+    overflow: hidden;
+    background-color: /*linear-gradient(40deg, var(--color-bg1), var(--color-bg2));*/rgb(2, 0, 16);
+    top: 0;
+    left: 0;
+  }
+  
+  svg {
+    display: none;
+  }
+  
+  .gradients-container {
+    width: 100%;
+    height:100%;
+  }
+  
+  .g1 {
+    position: absolute;
+    background: radial-gradient(circle at left, rgba(var(--color1), 0.2) 0, rgba(var(--color1), 0) 50%) no-repeat;
+    mix-blend-mode: var(--blending);
+    width: var(--circle-size);
+    height: var(--circle-size);
+    top: calc(50% - var(--circle-size) / 5);
+    left: calc(50% - var(--circle-size) / 2);
+  
+   
+  }
+  
+  .g2 {
+    position: absolute;
+    background: radial-gradient(circle at center, rgba(var(--color3), 0.2) 0, rgba(var(--color3), 0) 50%) no-repeat;
+    mix-blend-mode: var(--blending2);
+    width: var(--circle-size2);
+    height: var(--circle-size2);
+    top: calc(50% - var(--circle-size2) / 2.5 + 200px);
+    left: calc(50% - var(--circle-size2) / -5 + 200px);
+  
+   
+  }
+  
+  .g3 {
+    position: absolute;
+    background: radial-gradient(circle at left, rgba(var(--color2), 0.1 ) 0, rgba(var(--color2), 0) 50%) no-repeat;
+    mix-blend-mode: var(--blending);
+    width: var(--circle-size);
+    height: var(--circle-size);
+    top: calc(50% - var(--circle-size) / 1);
+    left: calc(50% - var(--circle-size) / 2);
+  
+   
+  }
+  
+  
+  .g4 {
+    position: absolute;
+    background: radial-gradient(circle at right, rgba(var(--color2), 0.1) 0, rgba(var(--color2), 0) 50%) no-repeat;
+    mix-blend-mode: var(--blending);
+    width: var(--circle-size);
+    height: var(--circle-size);
+    top: calc(50% - var(--circle-size) / 100);
+    left: calc(50% - var(--circle-size) / 3);
+  
+   
+  }
+  
+  .g6 {
+    position: absolute;
+    background: radial-gradient(circle at right, rgba(var(--color1), 0.1) 0, rgba(var(--color1), 0) 50%) no-repeat;
+    mix-blend-mode: var(--blending);
+    width: var(--circle-size);
+    height: var(--circle-size);
+    top: calc(50% - var(--circle-size) / 1.2);
+    left: calc(50% - var(--circle-size) / 2.6);
+  
+   
+  }
+  
+  p {
+      font-family: 'Lora', sans-serif;
+      color: rgb(173, 170, 170);
+  }
+  
+  h1{
+    font-family: 'Lora', sans-serif;
+    color: rgb(173, 170, 170);
+  }
+  
+  h2,h3,h4,h5,h6{
+    font-family: 'Lora', sans-serif;
+    color: rgb(173, 170, 170);
+  }
+  
+  
+  a{
+      text-decoration: none;
+  }
+  
+  
+    /* starts scroll bar */
+  
+    ::-webkit-scrollbar {
+      width: 8px; /* Set track width */
+    }
+    
+    ::-webkit-scrollbar-track {
+      background: rgb(1, 6, 24); /* Track background color with semi-transparency */
+    }
+    
+    ::-webkit-scrollbar-thumb {
+      background: white; /* Thumb background color */
+      border-radius: 4px; /* Rounded corners */
+    }
+    
+    ::-webkit-scrollbar-thumb:hover {
+      background: #666; /* Hover effect */
+    }
+  
+    /* STARTS NAV BAR */
+    
+    .navbar {
+      position: fixed; 
+      top: 0;             
+      left: 50%;
+      transform: translateX(-50%);
+  
+      width: 1500px;
+      height: 64px;        
+      
+      background-color: rgba(22, 22, 22, 0.3);
+      border: 2px solid rgba(42, 42, 42, 0.3);
+      box-shadow: 0 0 10px 2px rgba(42, 42, 42, 0.3);
+      
+      display: flex;       
+      align-items: center; 
+      justify-content: space-around; 
+      
+      border-radius: 0 0 50px 50px; /* to make only curve the bottom two edges*/
+      margin-bottom: 50px;
+      z-index: 2;
+  
+      Backdrop-filter: blur(90px);
+      -webkit-backdrop-filter: blur(90px);
+    }
+    
+    .navbar-container {
+      /* Additional styling for the container within the navbar (optional) */
+      padding: 10px;
+    }
+  
+  .nav_a_1 {
+      color: white;
+      font-family: "lora", sans-serif;
+      font-size: 123%;
+      position: absolute;
+      top: 0px;
+      right: 255px;
+  }
+  .nav_a_1:hover {
+      p {
+        color: rgb(83, 83, 83)
+      }
+  }
+  
+  .nav_a_2 {
+    color: white;
+    font-family: "lora", sans-serif;
+    font-size: 123%;
+    position: absolute;
+    top: 0px;
+    right: 410px;
+  }
+  
+  .nav_a_2:hover {
+    p {
+      color: rgb(83, 83, 83)
+    }
+  }
+  
+  .nav_a_3 {
+    color: white;
+    font-family: "lora", sans-serif;
+    font-size: 123%;
+    position: absolute;
+    bottom: -10px;
+    left: 146px;
+  }
+  
+  .nav_a_3:hover {
+    p {
+      color: rgb(83, 83, 83);
+    }
+  }
+  
+  .logo { 
+    width: 26%;
+    position: fixed;
+    top: -7px;
+    left: 30px;
+    transform: scale(0.69);
+  }
+  
+  /* this is for drop down menu  */
+  
+  /* CSS for dropdown */
+  .dropdown {
+    position: relative;
+    display: inline-block;
+  }
+  
+  .dropbtn {
+    background-color: rgba(132, 132, 132, 0.2);
+    color: white;
+    padding: 16px;
+    font-size: 18px;
+    border: none;
+    cursor: pointer;
+    position:absolute;
+    bottom: 14px;
+    left: 598px;
+    height: 50px;
+    width: 160px;
+    text-align: center;
+    border-radius: 25px 25px 25px 25px;
+  }
+  
+  .btntext{
+    position: relative;
+    bottom: 39px;
+    font-size: 16px;
+  }
+  
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    top: -10px;
+    left: 600px;
+    background-color: rgba(42, 42, 42, 0.3);
+    min-width: 160px;
+    z-index: 1;
+    text-align: center;
+    width: 20px;
+    border-radius: 25px 25px 25px 25px;
+  }
+  
+  .dropdown-content a {
+    color: white;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+  }
+  
+  .dropdown-content a:hover {
+    background-color: rgba(0, 0, 0, 0.5);
+  }
+  
+  .dropdown:hover .dropdown-content {
+    display: block;
+  }
+  
+  /* Ensure the dropdown button is visible */
+  .nav_a_3 {
+    position: relative;
+    z-index: 2;
+  }
+  
+/* templating  */
+
+.content_container_6 {
+    border: 2px solid rgba(42, 42, 42, 0.3);
+    box-shadow: 0 0 10px 2px rgba(42, 42, 42, 0.3);
+    background-color: rgba(42, 42, 42, 0.3);
+    border-radius: 25px;
+    height: 230px;
+    width: 1230px;
+    margin-bottom: 20px; /* Add space between each .content_container_6 */
+    position: relative;
+    top: 200px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex; /* Use flexbox for alignment */
+    justify-content: center; /* Center content horizontally */
+    align-items: center; /* Center content vertically */
+    text-align: center;
+}
+
+  
+  .nyc_img_6 {
+    position: absolute;
+    top: 12px;
+    right: 900px;
+  
+    height: 90%;
+    width: 22.6%;
+    border-radius: 8%;
+  }
+  
+  .content_heading_6 {
+    position:absolute;
+    top: 1px;
+    left: 360px;
+    font-size: 260%;
+  }
+  
+  .content_pricing_6 {
+    position:absolute;
+    top: 90px;
+    left: 360px;
+  }
+  
+  .content_sqft_6 {
+    position:absolute;
+    top: 90px;
+    left: 530px;
+  }
+  
+  .content_location_6 {
+    position: absolute;
+    top: 150px;
+    left: 360px;
+    text-align: left;
+  }
+  
+
+  
+/* footer starts  */
+
+.footer {
+    height: 60px;
+    width: 90%;
+  
+    position: absolute;
+    top: 2260px;
+    left:50%;
+    transform: translateX(-50%);
+  
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 25px 25px 0px 0px;
+  
+  }
+  
+  .copyright-text {
+    font-size: 20px; /* Adjust font size as needed */
+    color: #666; /* Adjust text color as needed */
+    position: absolute;
+    top: -8px;
+    left:37%;
+    transform: translateX("-37%");
+  }
+  
+  

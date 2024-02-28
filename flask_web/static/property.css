@@ -21,7 +21,7 @@ html, body{
   
   .gradient-bg {
     width: 100%;
-    height: 2300px;
+    height: 1550px;
     position: absolute;
     overflow: hidden;
     background-color: /*linear-gradient(40deg, var(--color-bg1), var(--color-bg2));*/rgb(2, 0, 16);
@@ -296,8 +296,8 @@ a{
     
     border-radius: 40px 40px 40px 40px;
 
-    height: 1000px;
-    width: 1300px;
+    height: 1300px;
+    width: 1350px;
 
     background-color: rgba(22, 22, 22, 0.3);
     border: 2px solid rgba(42, 42, 42, 0.3);
@@ -315,4 +315,136 @@ a{
 
     border-radius: 40px 40px 40px 40px;
 
+}
+
+.content-name{
+  font-size: 36px;
+
+  position: relative;
+  top: 4px;
+  left: 50px;
+}
+
+.content-price{
+  font-size: 36px;
+
+  position: relative;
+  bottom: 36px;
+  left: 440px;
+}
+
+.content-location{
+  font-size: 36px;
+
+  position: relative;
+  bottom: 16px;
+  left: 50px;
+}
+
+.content-bhk{
+  font-size: 36px;
+
+  position: relative;
+  bottom: 50px;
+  left: 440px;
+}
+
+/* change */
+
+.content-sqft{
+  font-size: 36px;
+
+  position: relative;
+  bottom: 16px;
+  left: 50px;
+}
+
+.content-floor{
+  font-size: 36px;
+
+  position: relative;
+  bottom: 50px;
+  left: 440px;
+}
+
+/* change */
+
+.content-ownership{
+  font-size: 36px;
+
+  position: relative;
+  bottom: 16px;
+  left: 50px;
+}
+
+.content-facing_direction{
+  font-size: 36px;
+
+  position: relative;
+  bottom: 50px;
+  left: 440px;
+}
+
+/* change */
+
+.content-age{
+  font-size: 36px;
+
+  position: relative;
+  bottom: 16px;
+  left: 50px;
+}
+
+.content-booking{
+  font-size: 36px;
+
+  position: relative;
+  bottom: 50px;
+  left: 440px;
+}
+
+.bookbtn{
+  position: relative;
+  bottom: 2px;
+  left: 50%;
+  transform: translateX(-50%);
+
+  height: 70px;
+  width: 180px;
+
+  border-radius: 25px 25px 25px 25px;
+
+  background-color: rgba(0, 0, 0, 0.5);;
+  border-radius: 24px;
+  border-style: none;
+  box-shadow: rgba(0, 0, 0, .2) 0 3px 5px -1px,rgba(0, 0, 0, .14) 0 6px 10px 0,rgba(0, 0, 0, .12) 0 1px 18px 0;
+}
+
+.bookbtn:hover{
+  background-color: rgba(162, 162, 162, 0.5);;
+}
+
+/* footer starts  */
+
+.footer {
+  height: 60px;
+  width: 90%;
+
+  position: absolute;
+  top: 1500px;
+  left:50%;
+  transform: translateX(-50%);
+
+  background-color: rgba(0, 0, 0, 0.5);
+  border-radius: 25px 25px 0px 0px;
+
+}
+
+.copyright-text {
+  font-size: 20px; /* Adjust font size as needed */
+  color: #666; /* Adjust text color as needed */
+  position: absolute;
+  top: -8px;
+  left:37%;
+  transform: translateX("-37%");
 }

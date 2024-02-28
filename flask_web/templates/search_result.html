@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Vastu Realties</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='search_result.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.6/fuse.min.js"></script>
+    <script src="./javascripts/searchengine.js" defer></script>
+    <link rel="icon" href="{{ url_for('static', filename='icons/favcon.png')}}">
+  </head>
+
+  <body id="grad">
+  
+    <!-- now starts the background-color -->
+    <div class="gradient-bg">
+      <div class="gradients-container">
+        <div class="g1"></div>
+        <div class="g2"></div>
+        <div class="g3"></div>
+        <div class="g4"></div>
+        <div class="g5"></div>
+        <div class="g6"></div>
+        <div class="g7"></div>
+        <div class="g8"></div>
+        <div class="g9"></div>
+
+        <!-- now starts the navbar  -->
+        <nav class="navbar">   
+          <div class="navbar-container">
+            <img src="{{ url_for('static', filename='icons/logo-verticle.png') }}" class="logo">
+              <a href="{{ url_for('home') }}" class="nav_a_3"><p>Home</p></a>
+              <a href="{{ url_for('upload') }}" class="nav_a_2"><p>Sell or Rent</p></a> 
+              <a href="{{ url_for('contact_us') }}" class="nav_a_1"><p>Contact Us</p></a> 
+              <div class="dropdown">
+                <button class="dropbtn"><h6 class="btntext">Account</h6></button>
+                <div class="dropdown-content">
+                  {% if current_username %}
+                  <p>hey, {{ current_username }}!</p>
+                  {% else %}
+                  <p>Welcome, Guest!</p>
+                  {% endif %}
+                  <a href="{{ url_for('logout') }}">Logout</a>
+                </div>
+              </div>      
+        </nav>
+
+    <h1 style="position: absolute; top: 80px; left: 50%; transform: translateX(-50%);">Search Results for "{{ query }}":</h1>
+
+        {% for result in search_results %}
+        <a href="{{ url_for('property', id=result.id) }}">
+            <div class="content_container_6">
+                <img src="{{ url_for('static', filename='uploads/' + result.image) }}" class="nyc_img_6" alt="Image">
+                <h1 class="content_heading_6">{{ result.name }}</h1>
+                <h2 class="content_pricing_6">{{ result.price }} |</h2>
+                <h2 class="content_sqft_6">{{ result.sqft }} SQFTS</h2>
+                <h3 class="content_location_6">{{ result.location }}</h3>
+            </div>
+        </a>
+        
+        {% endfor %}
+
+        <!-- This is a sort of footer not an actual footer  -->
+        <div class="footer">
+            <p class="copyright-text">
+              &copy; All rights reserved 2024 by Citadel Estates
+            </p>
+          </div>
+            <!--script for chatbot--> 
+            <script src="https://cdn.botpress.cloud/webchat/v1/inject.js"></script>
+            <script src="https://mediafiles.botpress.cloud/5e492196-55b1-4ac4-a141-02517c4561b2/webchat/config.js" defer></script>
+              </div>
+            </div>
+          </body>
+        </html> 
+

@@ -27,9 +27,9 @@ class Data(db.Model):
     price = db.Column(db.String(20), nullable=False)
     image = db.Column(db.String(100), nullable=True)
     bhk = db.Column(db.Integer, nullable=True)
+    sqft = db.Column(db.Integer, nullable=False)
     location = db.Column(db.String(100), nullable=True)   
     status = db.Column(db.String(50), nullable=True)   
-    address = db.Column(db.String(600), nullable=True)   
     floor = db.Column(db.String(10), nullable=True)   
     ownership_type = db.Column(db.String(20), nullable=True)   
     facing_direction = db.Column(db.String(10), nullable=True)
@@ -132,9 +132,9 @@ def upload():
             price = request.form['price']
             image = request.files['image']
             bhk = request.form['bhk']
+            sqft = request.form['sqft']
             location = request.form['location']
             status = request.form['status']
-            address = request.form['address']
             floor = request.form['floor']
             ownership_type = request.form['ownership_type']
             facing_direction = request.form['facing_direction']
@@ -145,7 +145,7 @@ def upload():
             filepath = os.path.join(app.config['UPLOAD_FOLDER'], filename)
             image.save(filepath)
             
-            new_data = Data(user_id=user_id, name=name, price=price, image=filename, bhk=bhk, location=location, status=status, address=address, floor=floor, ownership_type=ownership_type, facing_direction=facing_direction, age_of_construction=age_of_construction, booking_amount=booking_amount)
+            new_data = Data(user_id=user_id, name=name, price=price, image=filename, bhk=bhk, location=location, status=status, floor=floor, ownership_type=ownership_type, facing_direction=facing_direction, age_of_construction=age_of_construction, booking_amount=booking_amount, sqft=sqft)
 
             db.session.add(new_data)
             db.session.commit()
@@ -160,20 +160,24 @@ def search():
     if request.method == 'POST':
         query = request.form['query']
         search_results = Data.query.filter(Data.name.contains(query) | Data.location.contains(query) | Data.bhk.contains(query)).all()
-        return render_template('search.html', search_results=search_results, query=query)
+        return render_template('search_result.html', search_results=search_results, query=query)
     else:
         query = request.args.get('query')
         print("Search query:", query)  # Print out the query parameter for debugging purposes
-        return render_template('search.html')
+        return render_template('search_result.html')
     
 @app.route('/property/<int:id>')
 def property(id):
-    # Fetch the property data by ID
+
     property_data = Data.query.get(id)
     if property_data:
         return render_template('property.html', property_data=property_data)
     else:
         return render_template('property_not_found.html'), 404  # Render a custom 4
+
+@app.route("/coming_soon")
+def coming_soon():
+    return render_template('coming_soon.html')
 
 if __name__ == '__main__':
     with app.app_context():

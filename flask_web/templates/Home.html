@@ -33,17 +33,15 @@
           </div>
         </nav>
         <!-- now starts the searchbar  -->
-        <div class="wrap">
-          <div class="search">
-             <input type="text" class="searchTerm" placeholder=" What are you looking for?">
-             <button type="submit" class="searchButton">
-               <i class="fa fa-search"></i>
-              </button>
-          </div>
-        </div> 
+        <div class="search_div">
+          <form action="/search" method="post">
+            <input type="text" name="query" class="search_bar" placeholder="Search with areas, names, bhk...">
+            <button type="submit" class="search_btn">Search</button>
+          </form>
+            </div>
         <script src="D:\Website\javascripts\searchengine.js"></script>
       <!--now starts the content-->
-    <a href="D:\website\webpages\darohar.html">
+    <a href="http://127.0.0.1:5000/property/1">
       <div class="content_container">
         <img src="{{ url_for('static', filename='images/darohar/Image-1.jpg') }}" class="nyc_img">
         <h1 class="content_heading">Darohar</h1>
@@ -54,7 +52,7 @@
     </a>
   
   <!-- content-2 starts -->
-  <a href="C:\wamp64\www\Web-1\Content_2.html">
+  <a href="http://127.0.0.1:5000/property/2">
     <div class="content_container_2">
       <img src="{{ url_for('static', filename='images/suryavansh Solitaire/Image-1.jpg') }}" class="nyc_img_2">
       <h1 class="content_heading_2">Suryansh Solitaire</h1>
@@ -65,7 +63,7 @@
   </a>
   
   <!-- content-3 starts -->
-  <a href="C:\wamp64\www\Web-1\Content_3.html">
+  <a href="http://127.0.0.1:5000/property/3">
     <div class="content_container_3">
       <img src="{{ url_for('static', filename='images/Sangani Platinum/Image-1.jpg') }}" class="nyc_img_3">
       <h1 class="content_heading_3">Sangani Platinum</h1>
@@ -76,7 +74,7 @@
   </a>
  
   <!-- content-4 starts -->
-  <a href="C:\wamp64\www\Web-1\Content_4.html">
+  <a href="http://127.0.0.1:5000/property/4">
     <div class="content_container_4">
       <img src="{{ url_for('static', filename='images/Rajbaug Society/Image-1.jpg') }}" class="nyc_img_4">
       <h1 class="content_heading_4">Rajbaug Society</h1>
@@ -87,7 +85,7 @@
   </a>
   
   <!-- content-5 starts -->
-  <a href="C:\wamp64\www\Web-1\Content_5.html">
+  <a href="http://127.0.0.1:5000/property/6">
     <div class="content_container_5">
       <img src="{{ url_for('static', filename='images/Arohi bunglows/Image-1.jpg') }}" class="nyc_img_5">
       <h1 class="content_heading_5">Arohi bunglows</h1>
@@ -98,7 +96,7 @@
   </a>
 
   <!-- content-6 starts -->
-  <a href="C:\wamp64\www\Web-1\Content_6.html">
+  <a href="http://127.0.0.1:5000/property/8">
     <div class="content_container_6">
       <img src="{{ url_for('static', filename='images/swaminarayan/Image-1.jpg') }}" class="nyc_img_6">
       <h1 class="content_heading_6">Swaminarayan Park Phase 5</h1>
@@ -109,7 +107,7 @@
   </a>
   
   <!-- content-7 starts  -->
-  <a href="C:\wamp64\www\Web-1\Content_6.html">
+  <a href="http://127.0.0.1:5000/property/9">
     <div class="content_container_7">
       <img src="{{ url_for('static', filename='images/Supercity Shine/Image-1.jpg') }}" class="nyc_img_7">
       <h1 class="content_heading_7">Supercity Shine</h1>
@@ -121,18 +119,20 @@
 
   <!-- page shifter -->
   <div class="end">
+    <form action="{{ url_for('coming_soon') }}" method="GET">
     <button class="next">Next page!</button>
+  </form>
   </div>
   
   <!-- This is a sort of footer not an actual footer  -->
   <div class="footer">
     <p class="copyright-text">
-      &copy; All rights reserved 2024 by Citadel Estates
+      &copy; All rights reserved 2024 by Vastu Realties
     </p>
   </div>
      <!--script for chatbot--> 
      <script src="https://cdn.botpress.cloud/webchat/v1/inject.js"></script>
-     <script src="https://mediafiles.botpress.cloud/ea72c7e1-155e-48cf-a8ef-9e73a74b565d/webchat/config.js" defer></script>  
+     <script src="https://mediafiles.botpress.cloud/5e492196-55b1-4ac4-a141-02517c4561b2/webchat/config.js" defer></script>
       </div>
     </div>
   </body>
