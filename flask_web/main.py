@@ -157,24 +157,49 @@ def upload():
     
 @app.route('/search', methods=['GET', 'POST'])
 def search():
-    if request.method == 'POST':
-        query = request.form['query']
-        search_results = Data.query.filter(Data.name.contains(query) | Data.location.contains(query) | Data.bhk.contains(query)).all()
-        return render_template('search_result.html', search_results=search_results, query=query)
+    if 'username' in session:
+        current_username = session['username']
+        print("Current username:", current_username)
+
+    if 'logged_in' in session and session['logged_in']:
+        if request.method == 'POST':
+            query = request.form['query']
+            search_results = Data.query.filter(Data.name.contains(query) | Data.location.contains(query) | Data.bhk.contains(query)).all()
+            return render_template('search_result_logged_in.html', current_username=current_username, search_results=search_results, query=query)
+        else:
+            query = request.args.get('query')
+            print("Search query:", query)  # Print out the query parameter for debugging purposes
+            return render_template('search_result_logged_in.html', current_username=current_username)
+        
     else:
-        query = request.args.get('query')
-        print("Search query:", query)  # Print out the query parameter for debugging purposes
-        return render_template('search_result.html')
+        if request.method == 'POST':
+            query = request.form['query']
+            search_results = Data.query.filter(Data.name.contains(query) | Data.location.contains(query) | Data.bhk.contains(query)).all()
+            return render_template('search_result.html', search_results=search_results, query=query)
+        else:
+            query = request.args.get('query')
+            print("Search query:", query)  # Print out the query parameter for debugging purposes
+            return render_template('search_result.html')
     
 @app.route('/property/<int:id>')
 def property(id):
+    if 'username' in session:
+        current_username = session['username']
+        print("Current username:", current_username)
 
-    property_data = Data.query.get(id)
-    if property_data:
-        return render_template('property.html', property_data=property_data)
+    if 'logged_in' in session and session['logged_in']:
+        property_data = Data.query.get(id)
+        if property_data:
+            return render_template('property-logged-in.html', current_username=current_username, property_data=property_data)
+        else:
+            return render_template('property_not_found.html'), 404  # Render a custom 4
     else:
-        return render_template('property_not_found.html'), 404  # Render a custom 4
-
+        property_data = Data.query.get(id)
+        if property_data:
+            return render_template('property.html', current_username=current_username, property_data=property_data)
+        else:
+            return render_template('property_not_found.html'), 404  # Render a custom 4
+        
 @app.route("/coming_soon")
 def coming_soon():
     return render_template('coming_soon.html')

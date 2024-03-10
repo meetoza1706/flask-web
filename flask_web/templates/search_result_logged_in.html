@@ -2,7 +2,7 @@
 <html>
   <head>
     <title>Vastu Realties</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='search_result.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='search_result._logged_in.css') }}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.6/fuse.min.js"></script>
     <script src="./javascripts/searchengine.js" defer></script>
@@ -28,24 +28,20 @@
         <nav class="navbar">   
           <div class="navbar-container">
             <img src="{{ url_for('static', filename='icons/logo-verticle.png') }}" class="logo">
-            <a class="nav_a_3" href="{{ url_for('home') }}"><p>Home</p></a> 
-            <a href="{{ url_for('upload') }}" class="nav_a_2"><p>Sell or Rent</p></a> 
-            <a href="{{ url_for('contact_us') }}" class="nav_a_1"><p>Contact Us</p></a> 
-            <form method="GET" action="{{ url_for('login') }}">
-              <button type="submit" class="button-17" role="button">Login</button>
-          </form>
-          </div>
-          <nav class="navbar">   
-            <div class="navbar-container">
-              <img src="{{ url_for('static', filename='icons/logo-verticle.png') }}" class="logo">
-              <a class="nav_a_3" href="{{ url_for('home') }}"><p>Home</p></a> 
+              <a href="{{ url_for('home') }}" class="nav_a_3"><p>Home</p></a>
               <a href="{{ url_for('upload') }}" class="nav_a_2"><p>Sell or Rent</p></a> 
               <a href="{{ url_for('contact_us') }}" class="nav_a_1"><p>Contact Us</p></a> 
-              <form method="GET" action="{{ url_for('login') }}">
-                <button type="submit" class="button-17" role="button">Login</button>
-            </form>
-            </div>
-          </nav>
+              <div class="dropdown">
+                <button class="dropbtn"><h6 class="btntext">Account</h6></button>
+                <div class="dropdown-content">
+                  {% if current_username %}
+                  <p>hey, {{ current_username }}!</p>
+                  {% else %}
+                  <p>Welcome, Guest!</p>
+                  {% endif %}
+                  <a href="{{ url_for('logout') }}">Logout</a>
+                </div>
+              </div>      
         </nav>
 
     <h1 style="position: absolute; top: 80px; left: 50%; transform: translateX(-50%);">Search Results for "{{ query }}":</h1>
