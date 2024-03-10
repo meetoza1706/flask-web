@@ -157,35 +157,21 @@ def upload():
     
 @app.route('/search', methods=['GET', 'POST'])
 def search():
-    if 'username' in session:
-        current_username = session['username']
-        print("Current username:", current_username)
-
-    if 'logged_in' in session and session['logged_in']:
-        if request.method == 'POST':
+    if request.method == 'POST':
             query = request.form['query']
             search_results = Data.query.filter(Data.name.contains(query) | Data.location.contains(query) | Data.bhk.contains(query)).all()
-            return render_template('search_result_logged_in.html', current_username=current_username, search_results=search_results, query=query)
-        else:
-            query = request.args.get('query')
-            print("Search query:", query)  # Print out the query parameter for debugging purposes
-            return render_template('search_result_logged_in.html', current_username=current_username)
-        
+            return render_template('search_result_logged_in.html', search_results=search_results, query=query)
     else:
-        if request.method == 'POST':
-            query = request.form['query']
-            search_results = Data.query.filter(Data.name.contains(query) | Data.location.contains(query) | Data.bhk.contains(query)).all()
-            return render_template('search_result.html', search_results=search_results, query=query)
-        else:
             query = request.args.get('query')
             print("Search query:", query)  # Print out the query parameter for debugging purposes
-            return render_template('search_result.html')
+            return render_template('search_result_logged_in.html')
+        
     
 @app.route('/property/<int:id>')
 def property(id):
     if 'username' in session:
         current_username = session['username']
-        print("Current username:", current_username)
+        print("Current username:", current_username=current_username)                                                                                      
 
     if 'logged_in' in session and session['logged_in']:
         property_data = Data.query.get(id)
